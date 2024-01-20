@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="file:///Users/skytiger/Downloads/styles.css"> -->
+    <title>Environment Form</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Environment</h1>
+
+        <label for="keyword1">Enter Keyword 1</label>
+        <input type="text" id="keyword1" value="teacher">
+
+        <label for="keyword2">Enter Keyword 2</label>
+        <input type="text" id="keyword2" value="student">
+
+        <p class="special-text">Enter Four Options</p>
+
+
+        A: <input type="text" class="option-input" id="option1" value="synonym"> B: <input type="text" class="option-input"
+            id="option2" value="part of"> C: <input type="text" class="option-input" id="option3"
+            value="likes to teach"> D: <input type="text" class="option-input" id="option4" value="fights">
+        <button class="submit-btn" onclick="submit_keyword()">Submit</button>
+    </div>
+
+    <div class="memory">
+        <h3>SENSORY MEMORY:</h3>
+        <pre id="sensoryMemoryData">
+
+        </pre>
+    </div>
+
+    <script>
+        function submit_keyword() {
+            var keyword1 = document.getElementById('keyword1').value;
+            var keyword2 = document.getElementById('keyword2').value;
+
+            var options = {
+                option1: document.getElementById('option1').value,
+                option2: document.getElementById('option2').value,
+                option3: document.getElementById('option3').value,
+                option4: document.getElementById('option4').value,
+            };
+
+            if (keyword1.trim() !== "" && keyword1.length > 0 && keyword2.trim() !== "" && keyword2.length > 0) {
+                var data = {
+                    keyword1: keyword1,
+                    keyword2: keyword2
+                };
+
+                $.ajax({
+                    type: "GET",
+                    url: "http://10.128.0.2:5000/get_data",
+                    data: data,
+                    dataType: "json"
+                })
+                .done((response) => {
+				console.log(response);
+            // Extract rel and label fields
+            var relationships = response.edges.map(edge => {
+                return {
+                    relationship: edge.rel.label
+                };
+            });
+
+            // Construct the data
+            var displayData = {
+                "Keywords": {
+                    "keyword1": keyword1,
+                    "keyword2": keyword2
+                },
+                "options": options,
+                "Sensory Memory relationships": relationships
+            };
+
+            // Update the Sensory Memory content
+            document.getElementById('sensoryMemoryData').textContent = JSON.stringify(displayData, null, 4);
+        });
+            } else {
+                alert('Both keywords are required!');
+            }
+        }
+    </script>
+</body>
+
+</html>
