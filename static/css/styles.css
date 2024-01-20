@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label, p {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#keyword2 {
+  width: 577px; 
+  
+
+}
+
+#keyword1 {
+  width: 577px; 
+}
+  
+
+
+.special-text {
+  padding-bottom: 20px;
+
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.option {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    input[type="text"], .submit-btn {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    padding: 5%;
+    background-color: #fff;
+    border-radius: 3%;
+    box-shadow: 0 0 5% rgba(0, 0, 0, 0.2);
+  
+}
+
+h2, h3 {
+    color: #2a2a2a;
+    margin-bottom: 2%;
+}
+
+.input-group, .options {
+    margin-bottom: 2%;
+}
+
+.input-group label, .options label {
+    display: block;
+    margin-bottom: 1%;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1%;
+    border: 1px solid #ccc;
+    border-radius: 2%;
+}
+
+
+input#option1 {
+  width: 100px; 
+  height: 20px; 
+  font-size: 12px; 
+  padding-right: 165px
+}
+
+input#option2 {
+  width: 100px; 
+  height: 20px; 
+  font-size: 12px; 
+  padding-right: 165px
+}
+
+input#option3 {
+  width: 100px; 
+  height: 20px; 
+  font-size: 12px;
+  padding-right: 165px 
+}
+
+input#option4 {
+  width: 100px; 
+  height: 20px; 
+  font-size: 12px;
+  padding-right: 165px 
+}
+
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    justify-content: space-between;
+}
+
+.btn-group button {
+    width: 48%; 
+    padding: 1%;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 2%;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 30%;
+    padding: 1.5%;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 2%;
+    cursor: pointer;
+    margin-top: 2%;
+    font-size: larger;
+    margin-left: 35%;
+}
+
+.memory {
+    margin-top: 3%;
+    background-color: #e8f0ff;
+    padding: 2%;
+    border-radius: 2%;
+}
+
+.memory {
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+}
+
+pre {
+    white-space: pre-wrap;  
+    overflow-x: auto;      
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 640px) {
+    .container {
+        width: 90%;
+    }
+}
